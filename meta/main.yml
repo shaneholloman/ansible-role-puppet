@@ -1,0 +1,27 @@
+---
+dependencies: []
+
+galaxy_info:
+  role_name: puppet
+  author: shaneholloman
+  description: Puppet for Linux.
+  company: "shaneholloman"
+  license: "license (BSD, MIT)"
+  min_ansible_version: "2.10"
+  platforms:
+    - name: Debian
+      versions:
+        - stretch
+        - buster
+    - name: Ubuntu
+      versions:
+        - xenial
+        - bionic
+        - focal
+  galaxy_tags:
+    - system
+    - configuration
+    - cm
+    - orchestration
+    - server
+    - puppet

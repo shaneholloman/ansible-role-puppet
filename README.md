@@ -1,6 +1,6 @@
 # Ansible Role: Puppet
 
-[![CI](https://github.com/shaneholloman-org/ansible-role-puppet/actions/workflows/ci.yml/badge.svg)](https://github.com/shaneholloman-org/ansible-role-puppet/actions/workflows/ci.yml)
+[![CI](https://github.com/shaneholloman/ansible-role-puppet/actions/workflows/ci.yml/badge.svg)](https://github.com/shaneholloman/ansible-role-puppet/actions/workflows/ci.yml)
 
 An Ansible Role that installs [Puppet](https://www.puppet.com) on Linux.
 
@@ -58,4 +58,3 @@ MIT / BSD
 ## Author Information
 
 This role was created in 2023
-

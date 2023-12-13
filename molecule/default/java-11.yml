@@ -17,3 +17,9 @@
     java_packages:
       - openjdk-11-jdk
   when: ansible_distribution == 'Debian'
+
+- name: Install Java packages
+  ansible.builtin.apt:
+    name: "{{ java_packages }}"
+    state: present
+    update_cache: yes

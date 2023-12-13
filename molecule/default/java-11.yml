@@ -3,6 +3,17 @@
     cmd: "{{ ansible_pkg_mgr }} update"
   when: ansible_os_family in ['Debian', 'RedHat']
 
+- name: Debug apt update
+  ansible.builtin.command:
+    cmd: "{{ ansible_pkg_mgr }} update"
+  register: result
+  when: ansible_os_family == 'Debian'
+
+- name: Show apt update output
+  ansible.builtin.debug:
+    var: result.stdout_lines
+  when: ansible_os_family == 'Debian'
+
 - name: Set the java_packages variable (Debian)
   ansible.builtin.set_fact:
     java_packages:

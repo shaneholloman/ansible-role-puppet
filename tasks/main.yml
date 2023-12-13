@@ -1,10 +1,10 @@
 ---
 - name: Include setup for RedHat
-  include_tasks: setup-RedHat.yml
+  ansible.builtin.include_tasks: setup-RedHat.yml
   when: ansible_os_family == 'RedHat'
 
 - name: Include setup for Debian
-  include_tasks: setup-Debian.yml
+  ansible.builtin.include_tasks: setup-Debian.yml
   when: ansible_os_family == 'Debian'
 
 - name: Install Puppet.

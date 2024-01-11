@@ -44,7 +44,7 @@ jobs:
         distro:
           - rockylinux9
           - ubuntu2204
-          - debian12
+          - debian11  # update this to v12 by sorting the jdk version
 
     steps:
       - name: Check out the codebase.

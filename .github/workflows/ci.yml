@@ -43,7 +43,7 @@ jobs:
       matrix:
         distro:
           - rockylinux9
-          - ubuntu2004
+          - ubuntu2204
           - debian11
 
     steps:

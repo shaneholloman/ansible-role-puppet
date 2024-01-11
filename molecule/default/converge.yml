@@ -3,8 +3,8 @@
   hosts: all
   become: true
 
-  # pre_tasks:
-  #   - ansible.builtin.include_tasks: java-11.yml
+  pre_tasks:
+    - ansible.builtin.include_tasks: java-11.yml
 
   roles:
     - role: shaneholloman.java

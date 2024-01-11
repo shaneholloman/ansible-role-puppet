@@ -1,32 +1,19 @@
-- name: Update package cache
-  ansible.builtin.command:
-    cmd: "{{ ansible_pkg_mgr }} update"
-  when: ansible_os_family in ['Debian', 'RedHat']
-
-- name: Debug apt update
-  ansible.builtin.command:
-    cmd: "{{ ansible_pkg_mgr }} update"
-  register: result
+---
+- name: Update apt cache.
+  ansible.builtin.apt: update_cache=yes cache_valid_time=600
   when: ansible_os_family == 'Debian'
+  changed_when: false
 
-- name: Show apt update output
-  ansible.builtin.debug:
-    var: result.stdout_lines
-  when: ansible_os_family == 'Debian'
-
-- name: Set the java_packages variable (Debian)
+# Ubuntu.
+- name: Set the java_packages variable (Ubuntu).
   ansible.builtin.set_fact:
     java_packages:
       - openjdk-11-jdk
-  when: ansible_os_family == 'Debian'
+  when: ansible_distribution == 'Ubuntu'
 
-- name: Set the java_packages variable (RedHat)
+# Debian.
+- name: Set the java_packages variable (Debian).
   ansible.builtin.set_fact:
     java_packages:
-      - java-11-openjdk-devel
-  when: ansible_os_family == 'RedHat'
-
-- name: Install Java packages
-  ansible.builtin.package:
-    name: "{{ java_packages }}"
-    state: present
+      - openjdk-11-jdk
+  when: ansible_distribution == 'Debian'

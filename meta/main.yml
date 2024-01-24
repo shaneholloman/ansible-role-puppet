@@ -7,7 +7,7 @@ galaxy_info:
   author: shaneholloman
   description: Puppet for Linux.
   company: "shaneholloman"
-  license: "license (BSD, MIT)"
+  license: "license (Unlicense)"
   min_ansible_version: "2.10"
   platforms:
     - name: Debian

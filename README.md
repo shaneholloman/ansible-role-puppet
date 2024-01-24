@@ -1,4 +1,4 @@
-# Ansible Role: Puppet
+# Ansible Role: `puppet`
 
 [![CI](https://github.com/shaneholloman/ansible-role-puppet/actions/workflows/ci.yml/badge.svg)](https://github.com/shaneholloman/ansible-role-puppet/actions/workflows/ci.yml)
 
@@ -12,32 +12,44 @@ Requires Java 7 or later to be installed on the server (you can use the `shaneho
 
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
-    puppet_package: puppetserver
+```yml
+puppet_package: puppetserver
+```
 
 The package to be installed.
 
-    puppet_service: puppetserver
-    puppet_service_state: started
-    puppet_service_enabled: false
-    puppet_service_manage: false
+```yml
+puppet_service: puppetserver
+puppet_service_state: started
+puppet_service_enabled: false
+puppet_service_manage: false
+```
 
 The service that should be run on this server. By default, this role will not manage a Puppet service, and will not enable it at boot time.
 
-    puppet_bin_path: /opt/puppetlabs/bin
+```yml
+puppet_bin_path: /opt/puppetlabs/bin
+```
 
 The path to all the Puppet Labs binaries (after the package is installed).
 
-    puppet_version: 7
+```yml
+puppet_version: 7
+```
 
 The major version of Puppet to be installed.
 
-    # Used only for Debian/Ubuntu.
-    puppet_apt_deb: "https://apt.puppetlabs.com/puppet{{ puppet_version }}-release-{{ ansible_distribution_release }}.deb"
+```yml
+# Used only for Debian/Ubuntu.
+puppet_apt_deb: "https://apt.puppetlabs.com/puppet{{ puppet_version }}-release-{{ ansible_distribution_release }}.deb"
+```
 
 The .deb file for installation on Debian-based OSes.
 
-    # Used only for RedHat/CentOS.
-    puppet_yum_rpm: "https://yum.puppet.com/puppet{{ puppet_version }}-release-el-{{ ansible_distribution_major_version }}.noarch.rpm"
+```yml
+# Used only for RedHat/CentOS.
+puppet_yum_rpm: "https://yum.puppet.com/puppet{{ puppet_version }}-release-el-{{ ansible_distribution_major_version }}.noarch.rpm"
+```
 
 The .rpm file for installation on RedHat-based OSes.
 
@@ -47,13 +59,15 @@ None.
 
 ## Example Playbook
 
-    - hosts: all
-      roles:
-        - shaneholloman.puppet
+```yml
+- hosts: all
+  roles:
+    - shaneholloman.puppet
+```
 
 ## License
 
-MIT / BSD
+Unlicense
 
 ## Author Information
 

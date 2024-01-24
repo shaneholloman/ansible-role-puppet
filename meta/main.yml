@@ -1,14 +1,12 @@
 ---
-dependencies:
-  - role: shaneholloman.java
-
 galaxy_info:
   role_name: puppet
   author: shaneholloman
   description: Puppet for Linux.
   company: "shaneholloman"
   license: "license (Unlicense)"
-  min_ansible_version: "2.10"
+  min_ansible_version: "2.12"
+
   platforms:
     - name: Debian
       versions:
@@ -19,6 +17,7 @@ galaxy_info:
         - xenial
         - bionic
         - focal
+
   galaxy_tags:
     - system
     - configuration
@@ -26,3 +25,6 @@ galaxy_info:
     - orchestration
     - server
     - puppet
+
+dependencies:
+  - role: shaneholloman.java
